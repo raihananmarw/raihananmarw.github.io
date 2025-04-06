@@ -32,13 +32,48 @@
       to { opacity: 1; transform: translateY(0); }
     }
   </style>
-</head>
-<body class="bg-gray-100 text-gray-800 font-sans">
 
+  <script>
+  tailwind.config = {
+    darkMode: 'class',
+  }
+</script>
+
+</head>
+
+  <script>
+  const toggleBtn = document.getElementById("toggleDark");
+  const html = document.documentElement;
+
+  // Load preference
+  if (localStorage.getItem("theme") === "dark") {
+    html.classList.add("dark");
+    toggleBtn.innerText = "☀️ Light Mode";
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    if (html.classList.contains("dark")) {
+      html.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+      toggleBtn.innerText = "🌙 Dark Mode";
+    } else {
+      html.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+      toggleBtn.innerText = "☀️ Light Mode";
+    }
+  });
+</script>
+
+<body class="bg-gray-100 text-gray-800 font-sans dark:bg-gray-900 dark:text-gray-100">
 <!-- Header -->
-<header class="bg-gradient-to-r from-blue-600 to-teal-400 text-white py-10 text-center shadow-md">
+<header class="bg-gradient-to-r from-blue-600 to-teal-400 text-white dark:from-gray-800 dark:to-gray-700">
   <h1 class="text-4xl font-bold">Halo, saya Raihan Anmar Widyasmoro!</h1>
   <p class="text-lg mt-2">Web Developer | IT Support | Design Graphis</p>
+  <div class="absolute top-4 right-4">
+  <button id="toggleDark" class="bg-white text-blue-600 px-4 py-2 rounded shadow hover:bg-blue-100 transition text-sm">
+    🌙 Dark Mode
+  </button>
+  </div>
   <a href="sertifikat/CV_Raihan Anmar Widyasmoro.pdf" class="inline-block mt-4 px-6 py-2 bg-white text-blue-600 font-semibold rounded-full shadow hover:bg-blue-100 transition">📄 Download CV</a>
 </header>
 
@@ -105,7 +140,7 @@
 </div>
 
 <!-- Footer -->
-<footer class="bg-gray-800 text-white text-center py-4 mt-10">
+<footer class="bg-gray-800 text-white text-center py-4 mt-10 dark:bg-gray-900">
   <p>© 2025 | Raihan Anmar Widyasmoro</p>
 </footer>
 
