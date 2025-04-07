@@ -8,9 +8,12 @@ document.addEventListener("DOMContentLoaded", function () {
     html.classList.add("dark");
   }
 
-  toggle.addEventListener("click", () => {
-    html.classList.toggle("dark");
-    localStorage.setItem("theme", html.classList.contains("dark") ? "dark" : "light");
-  });
+  // Cek jika tombol toggleDark ada
+  if (toggle) {
+    toggle.addEventListener("click", () => {
+      html.classList.toggle("dark");
+      localStorage.setItem("theme", html.classList.contains("dark") ? "dark" : "light");
+    });
+  }
 });
 </script>
