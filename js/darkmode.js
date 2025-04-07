@@ -1,16 +1,14 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const html = document.documentElement;
+document.addEventListener("DOMContentLoaded", function () {
   const toggle = document.getElementById("toggleDark");
+  const html = document.documentElement;
 
+  toggle?.addEventListener("click", () => {
+    html.classList.toggle("dark");
+    localStorage.setItem("theme", html.classList.contains("dark") ? "dark" : "light");
+  });
+
+  // Set default theme on page load
   if (localStorage.getItem("theme") === "dark") {
     html.classList.add("dark");
-    toggle.innerText = "☀️ Light Mode";
   }
-
-  toggle.addEventListener("click", () => {
-    html.classList.toggle("dark");
-    const isDark = html.classList.contains("dark");
-    toggle.innerText = isDark ? "☀️ Light Mode" : "🌙 Dark Mode";
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-  });
 });
