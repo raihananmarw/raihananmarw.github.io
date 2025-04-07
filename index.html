@@ -1,57 +1,97 @@
-<!-- index.html -->
 <!DOCTYPE html>
-<html lang="id" class="dark">
+<html lang="id" class="">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Porto - Raihan Anmar Widyasmoro</title>
+  <title>Portofolio Raihan Anmar Widyasmoro</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
   <script src="js/darkmode.js" defer></script>
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
-  <!-- Navbar -->
-  <nav class="bg-white dark:bg-gray-800 shadow text-center py-4">
-    <a href="index.html" class="mx-4 text-blue-600 dark:text-white hover:underline">Beranda</a>
-    <a href="galeri.html" class="mx-4 text-blue-600 dark:text-white hover:underline">Galeri</a>
-    <a href="sertifikat.html" class="mx-4 text-blue-600 dark:text-white hover:underline">Sertifikat</a>
-    <a href="kontak.html" class="mx-4 text-blue-600 dark:text-white hover:underline">Kontak</a>
-    <button id="toggleDark" class="ml-6 bg-blue-600 text-white px-3 py-1 rounded text-sm">🌙 Dark Mode</button>
-  </nav>
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-white font-sans">
 
-  <!-- Header -->
-  <header class="bg-gradient-to-r from-blue-600 to-teal-400 text-white py-10 text-center shadow-md">
-    <h1 class="text-4xl font-bold">Halo, saya Raihan Anmar Widyasmoro!</h1>
-    <p class="text-lg mt-2">Web Developer | IT Support | Design Graphis</p>
-    <a href="CV_Raihan Anmar Widyasmoro.pdf" class="inline-block mt-4 px-6 py-2 bg-white text-blue-600 font-semibold rounded-full shadow hover:bg-blue-100 transition">📄 Download CV</a>
-  </header>
+<!-- Header -->
+<header class="bg-gradient-to-r from-blue-600 to-teal-400 text-white py-10 text-center shadow-md dark:from-gray-800 dark:to-gray-700">
+  <h1 class="text-4xl font-bold">Halo, saya Raihan Anmar Widyasmoro!</h1>
+  <p class="text-lg mt-2">Web Developer | IT Support | Design Graphis</p>
+  <div class="mt-4 flex justify-center gap-4 flex-wrap">
+    <a href="cv.pdf" class="inline-block px-6 py-2 bg-white text-blue-600 font-semibold rounded-full shadow hover:bg-blue-100 transition">📄 Download CV</a>
+    <button id="toggleDark" class="inline-block px-6 py-2 bg-white text-gray-800 font-semibold rounded-full shadow hover:bg-gray-200 transition">
+      🌙 Dark Mode
+    </button>
+  </div>
+</header>
 
-  <main class="max-w-5xl mx-auto px-4 py-10 space-y-16">
-    <!-- Tentang Saya -->
-    <section>
-      <h2 class="text-2xl font-bold border-l-4 border-blue-500 pl-3 mb-4">Tentang Saya</h2>
-      <p>Saya adalah lulusan Informatika yang fokus pada pengembangan aplikasi web, baik frontend maupun backend. Saat ini saya aktif membuat proyek pribadi dan terus belajar teknologi terbaru.</p>
-    </section>
+<!-- Konten -->
+<div class="max-w-5xl mx-auto px-4 py-10 space-y-16">
 
-    <!-- Proyek Unggulan -->
-    <section>
-      <h2 class="text-2xl font-bold border-l-4 border-blue-500 pl-3 mb-4">Proyek Unggulan</h2>
-      <div class="space-y-6">
-        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-semibold mb-2">🌦️ Aplikasi Cuaca</h3>
-          <p class="mb-3">Aplikasi web yang menampilkan data cuaca terkini menggunakan OpenWeather API.</p>
-          <a href="https://github.com/username/aplikasi-cuaca" class="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition" target="_blank">Lihat di GitHub</a>
-        </div>
-        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-semibold mb-2">📊 Sistem ERP Sederhana</h3>
-          <p class="mb-3">ERP berbasis web untuk mengelola inventaris dan keuangan. Dibuat dengan Laravel dan MySQL.</p>
-          <a href="https://github.com/username/erp-sederhana" class="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition" target="_blank">Lihat di GitHub</a>
-        </div>
+  <!-- Tentang Saya -->
+  <section>
+    <h2 class="text-2xl font-bold border-l-4 border-blue-500 pl-3 mb-4">Tentang Saya</h2>
+    <p>Saya adalah lulusan Informatika yang fokus pada pengembangan aplikasi web, baik frontend maupun backend. Saat ini saya aktif membuat proyek pribadi dan terus belajar teknologi terbaru.</p>
+  </section>
+
+  <!-- Proyek Unggulan -->
+  <section>
+    <h2 class="text-2xl font-bold border-l-4 border-blue-500 pl-3 mb-4">Proyek Unggulan</h2>
+
+    <div class="space-y-6">
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">🌦️ Aplikasi Cuaca</h3>
+        <p class="mb-3">Aplikasi web yang menampilkan data cuaca terkini menggunakan OpenWeather API.</p>
+        <a href="https://github.com/username/aplikasi-cuaca" class="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition" target="_blank">Lihat di GitHub</a>
       </div>
-    </section>
-  </main>
 
-  <footer class="bg-gray-800 text-white text-center py-4 mt-10">
-    <p>© 2025 | Raihan Anmar Widyasmoro</p>
-  </footer>
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">📊 Sistem ERP Sederhana</h3>
+        <p class="mb-3">ERP berbasis web untuk mengelola inventaris dan keuangan. Dibuat dengan Laravel dan MySQL.</p>
+        <a href="https://github.com/username/erp-sederhana" class="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition" target="_blank">Lihat di GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeri Proyek -->
+  <section>
+    <h2 class="text-2xl font-bold border-l-4 border-blue-500 pl-3 mb-4">Galeri Proyek</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <img src="images/proyek1.png" alt="Proyek 1" class="rounded-xl shadow-md transition hover:scale-105" />
+      <img src="images/proyek2.png" alt="Proyek 2" class="rounded-xl shadow-md transition hover:scale-105" />
+      <img src="images/proyek3.png" alt="Proyek 3" class="rounded-xl shadow-md transition hover:scale-105" />
+    </div>
+  </section>
+
+  <!-- Sertifikat -->
+  <section>
+    <h2 class="text-2xl font-bold border-l-4 border-blue-500 pl-3 mb-4">Sertifikat</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <img src="sertifikat/Sertifikat 1.jpg" alt="Sertifikat 1" class="rounded-xl shadow-md transition hover:scale-105">
+      <img src="sertifikat/Sertifikat 2.jpg" alt="Sertifikat 2" class="rounded-xl shadow-md transition hover:scale-105">
+      <img src="sertifikat/Sertifikat Python.jpg" alt="Sertifikat 3" class="rounded-xl shadow-md transition hover:scale-105">
+      <img src="sertifikat/Sertifikat Excel.jpg" alt="Sertifikat 4" class="rounded-xl shadow-md transition hover:scale-105" />
+      <img src="sertifikat/Sertifikat Data Engineering.jpg" alt="Sertifikat 5" class="rounded-xl shadow-md transition hover:scale-105" />
+      <img src="sertifikat/Sertifikat Marchine Learning.jpg" alt="Sertifikat 6" class="rounded-xl shadow-md transition hover:scale-105" />
+    </div>
+  </section>
+
+  <!-- Kontak -->
+  <section>
+    <h2 class="text-2xl font-bold border-l-4 border-blue-500 pl-3 mb-4">Kontak</h2>
+    <ul class="space-y-2">
+      <li>📧 Email: raihananmarw@gmail.com</li>
+      <li>💼 LinkedIn: <a href="https://linkedin.com/in/raihananmarw" target="_blank" class="text-blue-600 hover:underline">linkedin.com/in/raihananmarw</a></li>
+      <li>📍 Lokasi: Jakarta, Indonesia</li>
+    </ul>
+  </section>
+</div>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white text-center py-4 mt-10">
+  <p>© 2025 | Raihan Anmar Widyasmoro</p>
+</footer>
+
 </body>
 </html>
