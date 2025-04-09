@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skill Saya</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+  <script src="js/darkmode.js" defer></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+      opacity: 0;
+      animation: fade-in 0.8s ease forwards;
+    }
+  </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-white font-sans transition-colors duration-500">
+
+  <!-- Navbar -->
+  <nav class="p-4 bg-blue-600 dark:bg-gray-800 text-white flex justify-between">
+    <div class="flex space-x-4">
+      <a href="index.html">🏠 Beranda</a>
+      <a href="tentang.html">Tentang</a>
+      <a href="skill.html">Skill</a>
+      <a href="proyek.html">Proyek</a>
+      <a href="sertifikat.html">Sertifikat</a>
+      <a href="kontak.html">Kontak</a>
+    </div>
+    <button id="toggleDark" class="bg-white text-black dark:bg-gray-700 dark:text-white px-3 py-1 rounded">🌙 Mode</button>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-blue-600 to-teal-400 text-white py-6 text-center shadow-md">
+    <h1 class="text-3xl font-bold">Skill Saya</h1>
+  </header>
+
+  <!-- Konten -->
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <h2 class="text-2xl font-semibold mb-6 border-l-4 border-blue-500 pl-4">👨‍💻 Bahasa Pemrograman</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-8 text-center">
+      <div class="flex flex-col items-center space-y-2 animate-fade-in" style="animation-delay: 0s;">
+        <i class="fab fa-html5 text-orange-500 text-5xl"></i><p>HTML</p>
+      </div>
+      <div class="flex flex-col items-center space-y-2 animate-fade-in" style="animation-delay: 0.1s;">
+        <i class="fab fa-css3-alt text-blue-500 text-5xl"></i><p>CSS</p>
+      </div>
+      <div class="flex flex-col items-center space-y-2 animate-fade-in">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="Tailwind CSS" class="w-12 h-12">
+        <p class="text-lg font-medium">Tailwind CSS</p>
+      </div>      
+      <div class="flex flex-col items-center space-y-2 animate-fade-in" style="animation-delay: 0.2s;">
+        <i class="fab fa-js-square text-yellow-400 text-5xl"></i><p>JavaScript</p>
+      </div>
+      <div class="flex flex-col items-center space-y-2 animate-fade-in" style="animation-delay: 0.3s;">
+        <i class="fab fa-php text-indigo-600 text-5xl"></i><p>PHP</p>
+      </div>
+      <div class="flex flex-col items-center space-y-2 animate-fade-in" style="animation-delay: 0.4s;">
+        <i class="fab fa-python text-blue-400 text-5xl"></i><p>Python</p>
+      </div>
+      <div class="flex flex-col items-center space-y-2 animate-fade-in" style="animation-delay: 0.5s;">
+        <i class="fas fa-database text-gray-600 text-5xl"></i><p>SQL</p>
+      </div>
+      <div class="flex flex-col items-center space-y-2 animate-fade-in" style="animation-delay: 0.6s;">
+        <i class="fas fa-cube text-purple-500 text-5xl"></i><p>Unity</p>
+      </div>
+    </div>
+
+    <!-- Desain Grafis -->
+    <section class="mt-16">
+      <h2 class="text-2xl font-semibold mb-6 border-l-4 border-pink-500 pl-4">🎨 Desain Grafis</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition animate-fade-in" style="animation-delay: 0s;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" alt="Photoshop" class="w-12 h-12 mb-2">
+          <span>Photoshop</span>
+        </div>
+        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition animate-fade-in" style="animation-delay: 0.1s;">
+          <img src="images/image.png" alt="Canva" class="w-12 h-12 mb-2">
+          <span>Canva</span>
+        </div>
+        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition animate-fade-in" style="animation-delay: 0.2s;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" class="w-12 h-12 mb-2">
+          <span>Figma</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI -->
+    <section class="mt-16">
+      <h2 class="text-2xl font-semibold mb-6 border-l-4 border-green-500 pl-4">🤖 Kecerdasan Buatan (AI)</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition animate-fade-in" style="animation-delay: 0s;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT" class="w-12 h-12 mb-2">
+          <span>ChatGPT</span>
+        </div>
+        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition animate-fade-in" style="animation-delay: 0.1s;">
+          <img src="images/claude_ai.jpg" alt="Claude.ai" class="w-12 h-12 mb-2">
+          <span>Claude.ai</span>
+        </div>
+        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition animate-fade-in" style="animation-delay: 0.2s;">
+          <img src="images/Meta.png" alt="Meta AI" class="w-12 h-12 mb-2">
+          <span>Meta AI</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center text-sm text-gray-500 dark:text-gray-400 py-4 mt-10">
+    &copy; 2025 Raihan Anmar Widyasmoro
+  </footer>
+</body>
+</html>
