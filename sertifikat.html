@@ -1,36 +1,103 @@
-<!-- File: sertifikat.html -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
   <title>Sertifikat | Raihan</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
   <script src="js/darkmode.js" defer></script>
 </head>
-<body class="bg-white text-black dark:bg-gray-900 dark:text-white">
+<body class="bg-white text-black dark:bg-gray-900 dark:text-white transition-colors duration-500">
 
 <nav class="p-4 bg-blue-600 dark:bg-gray-800 text-white flex justify-between">
   <div class="flex space-x-4">
     <a href="index.html">🏠 Beranda</a>
     <a href="tentang.html">Tentang</a>
+    <a href="skill.html">Skill</a>
     <a href="proyek.html">Proyek</a>
     <a href="sertifikat.html">Sertifikat</a>
     <a href="kontak.html">Kontak</a>
   </div>
-<!--   <button id="toggleDark" class="bg-white text-black dark:bg-gray-700 dark:text-white px-3 py-1 rounded">🌙 Mode</button> -->
+  <button id="toggleDark" class="bg-white text-black dark:bg-gray-700 dark:text-white px-3 py-1 rounded">🌙 Mode</button>
 </nav>
 
-<main class="p-6">
-  <h1 class="text-2xl font-bold mb-4">Sertifikat</h1>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-    <img src="sertifikat/Sertifikat 1.jpg" alt="Sertifikat 1" class="rounded shadow">
-    <img src="sertifikat/Sertifikat 2.jpg" alt="Sertifikat 2" class="rounded shadow">
-    <img src="sertifikat/Sertifikat Python.jpg" alt="Sertifikat 3" class="rounded shadow">
-    <img src="sertifikat/Sertifikat Excel.jpg" alt="Sertifikat 4" class="rounded shadow">
-    <img src="sertifikat/Sertifikat Data Engineering.jpg" alt="Sertifikat 5" class="rounded shadow">
-    <img src="sertifikat/Sertifikat Marchine Learning.jpg" alt="Sertifikat 6" class="rounded shadow">
-  </div>
-</main>
+    <header class="bg-gradient-to-r from-blue-600 to-teal-400 text-white py-6 text-center shadow-md">
+    <h1 class="text-3xl font-bold">Sertifikat</h1>
+    </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-10">
+    <h2 class="text-2xl font-semibold mb-6 border-l-4 border-blue-500 pl-4">Daftar Sertifikat</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <img src="sertifikat/Sertifikat 1.jpg" alt="Sertifikat 1" class="rounded-xl shadow-md transition duration-300 ease-in-out transform hover:scale-110 opacity-0 animate-fade-in delay-100">
+        <img src="sertifikat/Sertifikat 2.jpg" alt="Sertifikat 2" class="rounded-xl shadow-md transition duration-300 ease-in-out transform hover:scale-110 opacity-0 animate-fade-in delay-200">
+        <img src="sertifikat/Sertifikat Python.jpg" alt="Sertifikat 3" class="rounded-xl shadow-md transition duration-300 ease-in-out transform hover:scale-110 opacity-0 animate-fade-in delay-300">
+        <img src="sertifikat/Sertifikat Excel.jpg" alt="Sertifikat 4" class="rounded-xl shadow-md transition duration-300 ease-in-out transform hover:scale-110 opacity-0 animate-fade-in delay-400">
+        <img src="sertifikat/Sertifikat Data Engineering.jpg" alt="Sertifikat 5" class="rounded-xl shadow-md transition duration-300 ease-in-out transform hover:scale-110 opacity-0 animate-fade-in delay-500">
+        <img src="sertifikat/Sertifikat Marchine Learning.jpg" alt="Sertifikat 6" class="rounded-xl shadow-md transition duration-300 ease-in-out transform hover:scale-110 opacity-0 animate-fade-in delay-600">
+      </div>
+
+      <!-- Modal Preview Sertifikat -->
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
+    <div class="relative max-w-4xl w-full p-4">
+      <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-2xl font-bold hover:text-red-400">✖️</button>
+      <img id="modalImage" src="" alt="Preview Sertifikat" class="w-full max-h-[80vh] rounded-lg shadow-xl object-contain mx-auto">
+    </div>
+    </div>
+  
+
+  </main>
+
+  <footer class="text-center text-sm text-gray-500 py-4 mt-10">
+    &copy; 2025 Raihan Anmar Widyasmoro
+  </footer>
+
+  <script>
+    const modal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+  
+    // Semua gambar sertifikat
+    document.querySelectorAll('img[src^="sertifikat/"]').forEach(img => {
+      img.addEventListener("click", () => {
+        modalImage.src = img.src;
+        modal.classList.remove("hidden");
+      });
+    });
+  
+    // Fungsi untuk menutup modal
+    function closeModal() {
+      modal.classList.add("hidden");
+      modalImage.src = "";
+    }
+  
+    // Tutup modal jika klik di luar gambar
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+  </script>
+
+  <style>
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fade-in 0.8s ease forwards;
+    }
+  </style>
 
 </body>
 </html>
