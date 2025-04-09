@@ -1,33 +1,102 @@
-<!-- File: kontak.html -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kontak | Raihan</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    };
+  </script>
   <script src="js/darkmode.js" defer></script>
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
-<body class="bg-white text-black dark:bg-gray-900 dark:text-white">
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-white font-sans transition-all duration-500">
 
+<!-- Navbar -->
 <nav class="p-4 bg-blue-600 dark:bg-gray-800 text-white flex justify-between">
   <div class="flex space-x-4">
     <a href="index.html">🏠 Beranda</a>
     <a href="tentang.html">Tentang</a>
+    <a href="skill.html">Skill</a>
     <a href="proyek.html">Proyek</a>
     <a href="sertifikat.html">Sertifikat</a>
     <a href="kontak.html">Kontak</a>
   </div>
-<!--   <button id="toggleDark" class="bg-white text-black dark:bg-gray-700 dark:text-white px-3 py-1 rounded">🌙 Mode</button> -->
+  <button id="toggleDark" class="bg-white text-black dark:bg-gray-700 dark:text-white px-3 py-1 rounded">🌙 Mode</button>
 </nav>
 
-<main class="p-6">
-  <h1 class="text-2xl font-bold mb-4">Kontak</h1>
-  <ul class="space-y-2">
-    <li>📧 Email: raihananmarw@gmail.com</li>
-    <li>💼 LinkedIn: <a href="https://linkedin.com/in/raihananmarw" class="text-blue-500 hover:underline">linkedin.com/in/raihananmarw</a></li>
-    <li>📍 Lokasi: Jakarta, Indonesia</li>
-  </ul>
+<header class="bg-gradient-to-r from-blue-600 to-teal-400 text-white py-6 text-center shadow-md">
+  <h1 class="text-3xl font-bold">Hubungi Saya</h1>
+</header>
+
+<main class="max-w-4xl mx-auto px-4 py-10">
+  <!-- Form Kontak -->
+  <form id="kontakForm" class="space-y-6">
+    <div>
+      <label for="nama" class="block font-medium mb-1">Nama</label>
+      <input type="text" id="nama" class="w-full p-2 rounded bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700">
+    </div>
+    <div>
+      <label for="email" class="block font-medium mb-1">Email</label>
+      <input type="email" id="email" class="w-full p-2 rounded bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700">
+    </div>
+    <div>
+      <label for="pesan" class="block font-medium mb-1">Pesan</label>
+      <textarea id="pesan" rows="5" class="w-full p-2 rounded bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700"></textarea>
+    </div>
+    <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">Kirim</button>
+  </form>
+
+  <!-- Map Interaktif -->
+  <div class="mt-12">
+    <h2 class="text-2xl font-semibold mb-4">📍 Lokasi Saya</h2>
+    <div class="overflow-hidden rounded-lg shadow-lg">
+      <iframe class="w-full h-80 border-0" 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126920.28228579364!2d106.74711702124452!3d-6.2295694531156816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1744186348388!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
 </main>
+
+<!-- Footer -->
+<footer class="text-center text-sm text-gray-500 dark:text-gray-400 py-6 mt-10">
+  &copy; 2025 Raihan Anmar Widyasmoro
+</footer>
+
+<script>
+  // Validasi Form dan SweetAlert
+  document.getElementById("kontakForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const nama = document.getElementById("nama").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const pesan = document.getElementById("pesan").value.trim();
+
+    if (!nama || !email || !pesan) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Semua kolom harus diisi!",
+      });
+      return;
+    }
+
+    // Jika semua input valid
+    Swal.fire({
+      icon: "success",
+      title: "Terkirim!",
+      text: "Pesan Anda telah berhasil dikirim.",
+    });
+
+    // Kosongkan form setelah submit
+    document.getElementById("kontakForm").reset();
+  });
+</script>
 
 </body>
 </html>
