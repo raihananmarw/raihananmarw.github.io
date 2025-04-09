@@ -1,29 +1,94 @@
-<!-- File: tentang.html -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Tentang | Raihan</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tentang Saya</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
   <script src="js/darkmode.js" defer></script>
+  <style>
+    @keyframes float {
+      0% { transform: translatey(0px); }
+      50% { transform: translatey(-10px); }
+      100% { transform: translatey(0px); }
+    }
+
+    .animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+  </style>
 </head>
-<body class="bg-white text-black dark:bg-gray-900 dark:text-white">
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-white font-sans transition-colors duration-500">
 
-<nav class="p-4 bg-blue-600 dark:bg-gray-800 text-white flex justify-between">
-  <div class="flex space-x-4">
-    <a href="index.html">🏠 Beranda</a>
-    <a href="tentang.html">Tentang</a>
-    <a href="proyek.html">Proyek</a>
-    <a href="sertifikat.html">Sertifikat</a>
-    <a href="kontak.html">Kontak</a>
+  <!-- Navbar -->
+  <nav class="p-4 bg-blue-600 dark:bg-gray-800 text-white flex justify-between">
+    <div class="flex space-x-4">
+      <a href="index.html">🏠 Beranda</a>
+      <a href="tentang.html">Tentang</a>
+      <a href="skill.html">Skill</a>
+      <a href="proyek.html">Proyek</a>
+      <a href="sertifikat.html">Sertifikat</a>
+      <a href="kontak.html">Kontak</a>
+    </div>
+    <button id="toggleDark" class="bg-white text-black dark:bg-gray-700 dark:text-white px-3 py-1 rounded">🌙 Mode</button>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-blue-600 to-teal-400 text-white py-6 text-center shadow-md">
+    <h1 class="text-3xl font-bold">Tentang Saya</h1>
+  </header>
+
+  <!-- Konten -->
+  <main class="max-w-5xl mx-auto px-4 py-10 flex flex-col md:flex-row items-center gap-8">
+    
+    <!-- Foto Profil -->
+    <div class="relative w-55 h-55 rounded-full bg-gradient-to-tr from-blue-500 to-teal-400 p-1 animate-float shadow-lg">
+    <img src="images/PP Raihan.png" alt="Foto Raihan"
+       class="w-full h-full object-cover rounded-full border-4 border-white dark:border-gray-900" />
+    </div>
+
+    <!-- Deskripsi -->
+    <div>
+      <h2 class="text-2xl font-semibold mb-4">Halo! Saya Raihan Anmar Widyasmoro 👋</h2>
+      <p class="text-lg leading-relaxed">
+        Saya adalah lulusan Informatika dari Universitas Teknologi Yogyakarta yang antusias di bidang Software Engineering, desain grafis, dan teknologi AI. Saya suka membangun solusi yang kreatif dan bermanfaat, baik frontend maupun backend.
+      </p>
+      <p class="mt-4 text-lg">
+        Saat ini saya terus memperdalam skill saya dengan membuat proyek pribadi dan mengeksplorasi tools modern seperti Tailwind CSS, Figma, dan ChatGPT.
+      </p>
+    </div>
+  </main>
+
+  <!-- Foto Wisuda & Ijazah -->
+<section class="mt-10 text-center">
+  <h2 class="text-2xl font-semibold mb-4">📸 Momen Wisuda & Ijazah</h2>
+  <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+    
+    <!-- Foto Wisuda -->
+    <div class="w-64 h-auto rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition duration-300">
+      <img src="images/DSC_0092.JPG" alt="Foto Wisuda Raihan" class="w-full h-auto object-cover">
+      <p class="mt-2 text-lg font-medium">Foto Wisuda</p>
+    </div>
+    
+    <!-- Foto Ijazah -->
+    <div class="w-64 h-auto rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition duration-300">
+      <img src="images/ijazah.jpg" alt="Ijazah Raihan" class="w-full h-auto object-cover">
+      <p class="mt-2 text-lg font-medium">Ijazah</p>
+    </div>
+
   </div>
-<!--   <button id="toggleDark" class="bg-white text-black dark:bg-gray-700 dark:text-white px-3 py-1 rounded">🌙 Mode</button> -->
-</nav>
+</section>
 
-<main class="p-6">
-  <h1 class="text-2xl font-bold mb-4">Tentang Saya</h1>
-  <p>Saya adalah lulusan Informatika yang fokus pada pengembangan aplikasi web, baik frontend maupun backend...</p>
-</main>
+
+  <!-- Footer -->
+  <footer class="text-center text-sm text-gray-500 dark:text-gray-400 py-4 mt-10">
+    &copy; 2025 Raihan Anmar Widyasmoro
+  </footer>
 
 </body>
 </html>
