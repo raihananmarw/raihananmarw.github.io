@@ -10,16 +10,9 @@
   </script>
   <script src="js/darkmode.js" defer></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <style>
-    @keyframes fade-in {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .animate-fade-in {
-      opacity: 0;
-      animation: fade-in 0.8s ease forwards;
-    }
-  </style>
+ <!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
 <body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-white font-sans transition-colors duration-500">
 
@@ -43,99 +36,106 @@
 
   <!-- Konten -->
   <main class="max-w-4xl mx-auto px-4 py-10">
-    <h2 class="text-2xl font-semibold mb-6 border-l-4 border-blue-500 pl-4">👨‍💻 Bahasa Pemrograman</h2>
+
+    <!-- Bahasa Pemrograman -->
+    <h2 class="text-2xl font-semibold mb-6 border-l-4 border-blue-500 pl-4" data-aos="fade-right">👨‍💻 Bahasa Pemrograman</h2>
     <div class="grid grid-cols-2 sm:grid-cols-3 gap-8 text-center">
-      <div class="flex flex-col items-center space-y-2 animate-fade-in" style="animation-delay: 0s;">
+      <div class="flex flex-col items-center space-y-2" data-aos="fade-up" data-aos-delay="0">
         <i class="fab fa-html5 text-orange-500 text-5xl"></i><p>HTML</p>
       </div>
-      <div class="flex flex-col items-center space-y-2 animate-fade-in" style="animation-delay: 0.1s;">
+      <div class="flex flex-col items-center space-y-2" data-aos="fade-up" data-aos-delay="100">
         <i class="fab fa-css3-alt text-blue-500 text-5xl"></i><p>CSS</p>
       </div>
-      <div class="flex flex-col items-center space-y-2 animate-fade-in">
+      <div class="flex flex-col items-center space-y-2" data-aos="fade-up" data-aos-delay="200">
         <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="Tailwind CSS" class="w-12 h-12">
         <p class="text-lg font-medium">Tailwind CSS</p>
       </div>      
-      <div class="flex flex-col items-center space-y-2 animate-fade-in" style="animation-delay: 0.2s;">
+      <div class="flex flex-col items-center space-y-2" data-aos="fade-up" data-aos-delay="300">
         <i class="fab fa-js-square text-yellow-400 text-5xl"></i><p>JavaScript</p>
       </div>
-      <div class="flex flex-col items-center space-y-2 animate-fade-in" style="animation-delay: 0.3s;">
+      <div class="flex flex-col items-center space-y-2" data-aos="fade-up" data-aos-delay="400">
         <i class="fab fa-php text-indigo-600 text-5xl"></i><p>PHP</p>
       </div>
-      <div class="flex flex-col items-center space-y-2 animate-fade-in" style="animation-delay: 0.4s;">
+      <div class="flex flex-col items-center space-y-2" data-aos="fade-up" data-aos-delay="500">
         <i class="fab fa-python text-blue-400 text-5xl"></i><p>Python</p>
       </div>
-      <div class="flex flex-col items-center space-y-2 animate-fade-in" style="animation-delay: 0.5s;">
+      <div class="flex flex-col items-center space-y-2" data-aos="fade-up" data-aos-delay="600">
         <i class="fas fa-database text-gray-600 text-5xl"></i><p>SQL</p>
       </div>
-      <div class="flex flex-col items-center space-y-2 animate-fade-in" style="animation-delay: 0.6s;">
+      <div class="flex flex-col items-center space-y-2" data-aos="fade-up" data-aos-delay="700">
         <i class="fas fa-cube text-purple-500 text-5xl"></i><p>Unity</p>
       </div>
     </div>
-
+  
     <!-- Desain Grafis -->
     <section class="mt-16">
-      <h2 class="text-2xl font-semibold mb-6 border-l-4 border-pink-500 pl-4">🎨 Desain Grafis</h2>
+      <h2 class="text-2xl font-semibold mb-6 border-l-4 border-pink-500 pl-4" data-aos="fade-right">🎨 Desain Grafis</h2>
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition animate-fade-in" style="animation-delay: 0s;">
+        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="0">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" alt="Photoshop" class="w-12 h-12 mb-2">
           <span>Photoshop</span>
         </div>
-        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition animate-fade-in" style="animation-delay: 0.1s;">
+        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
           <img src="images/image.png" alt="Canva" class="w-12 h-12 mb-2">
           <span>Canva</span>
         </div>
-        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition animate-fade-in" style="animation-delay: 0.2s;">
+        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" class="w-12 h-12 mb-2">
           <span>Figma</span>
         </div>
       </div>
     </section>
-
-    <!-- AI -->
+  
+    <!-- Kecerdasan Buatan -->
     <section class="mt-16">
-      <h2 class="text-2xl font-semibold mb-6 border-l-4 border-green-500 pl-4">🤖 Kecerdasan Buatan (AI)</h2>
+      <h2 class="text-2xl font-semibold mb-6 border-l-4 border-green-500 pl-4" data-aos="fade-right">🤖 Kecerdasan Buatan (AI)</h2>
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition animate-fade-in" style="animation-delay: 0s;">
+        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="0">
           <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT" class="w-12 h-12 mb-2">
           <span>ChatGPT</span>
         </div>
-        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition animate-fade-in" style="animation-delay: 0.1s;">
+        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
           <img src="images/claude_ai.jpg" alt="Claude.ai" class="w-12 h-12 mb-2">
           <span>Claude.ai</span>
         </div>
-        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition animate-fade-in" style="animation-delay: 0.2s;">
+        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
           <img src="images/Meta.png" alt="Meta AI" class="w-12 h-12 mb-2">
           <span>Meta AI</span>
         </div>
       </div>
     </section>
-
+  
     <!-- Microsoft Office -->
     <section class="mt-16">
-      <h2 class="text-2xl font-semibold mb-6 border-l-4 border-blue-400 pl-4">💼 Microsoft Office</h2>
+      <h2 class="text-2xl font-semibold mb-6 border-l-4 border-blue-400 pl-4" data-aos="fade-right">💼 Microsoft Office</h2>
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-        
-        <!-- Word -->
-        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition animate-fade-in" style="animation-delay: 0s;">
+        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="0">
           <img src="images/Microsoft-Word-Logo-8.svg" alt="Word" class="w-12 h-12 mb-2">
           <span>Microsoft Word</span>
         </div>
-        
-        <!-- Excel -->
-        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition animate-fade-in" style="animation-delay: 0.1s;">
+        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
           <img src="images/Excel-logo-2.svg" alt="Excel" class="w-12 h-12 mb-2">
           <span>Microsoft Excel</span>
         </div>
-        
-        <!-- PowerPoint -->
-        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition animate-fade-in" style="animation-delay: 0.2s;">
+        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
           <img src="images/Microsoft-PowerPoint-Logo-SVG_010.svg" alt="PowerPoint" class="w-12 h-12 mb-2">
           <span>PowerPoint</span>
         </div>
-    
       </div>
     </section>
+  
   </main>
+  
+
+  <!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true, // animasi hanya terjadi sekali saat scroll
+  });
+</script>
+
 
   <!-- Footer -->
   <footer class="text-center text-sm text-gray-500 dark:text-gray-400 py-4 mt-10">
