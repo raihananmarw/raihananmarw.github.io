@@ -11,8 +11,18 @@
   </script>
   <script src="js/darkmode.js" defer></script>
 
-  <!-- AOS CSS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true,
+  });
+</script>
+
 </head>
 <body class="bg-white text-black dark:bg-gray-900 dark:text-white">
 
@@ -31,39 +41,74 @@
 
 <!-- Header -->
 <header class="bg-gradient-to-r from-blue-600 to-teal-400 text-white py-6 text-center shadow-md">
-  <h1 class="text-3xl font-bold">Projek Saya</h1>
+  <h1 class="text-3xl font-bold">🚀 Projek Saya</h1>
 </header>
 
 <!-- Main Content -->
-<main class="p-6 space-y-6">
-  <div class="bg-white dark:bg-gray-800 p-6 rounded shadow" data-aos="fade-up">
-    <h2 class="text-xl font-semibold">💼 Aset Management</h2>
-    <p>Aplikasi untuk mengelola aset internal secara digital.</p>
-    <a href="https://github.com/raihananmarw/projek/tree/main/Aset%20Management" class="text-blue-500 hover:underline">GitHub</a>
-  </div>
+<main class="p-6">
+  <div class="pb-4">
+    <div class="flex flex-wrap justify-center gap-6">
 
-  <div class="bg-white dark:bg-gray-800 p-6 rounded shadow" data-aos="fade-up" data-aos-delay="100">
-    <h2 class="text-xl font-semibold">🔧⚙️ Aplikasi Pembersih System</h2>
-    <p>Otomatisasi pembersihan file sampah pada komputer.</p>
-    <a href="https://github.com/raihananmarw/projek/tree/main/Automasi" class="text-blue-500 hover:underline">GitHub</a>
-  </div>
+      <!-- Card 1 -->
+      <div class="w-80 min-h-[440px] bg-white dark:bg-white/10 dark:backdrop-blur-lg border border-gray-200 dark:border-white/20 rounded-xl p-4 shadow-lg text-gray-800 dark:text-white"
+           data-aos="fade-up">
+        <img src="images/proyek1.jpg" alt="Aplikasi Cuaca" class="w-full h-48 object-cover rounded-lg mb-4">
+        <h3 class="text-xl font-semibold mb-2">🌦️ Aplikasi Cuaca</h3>
+        <p class="text-sm mb-4 break-words">Menampilkan info cuaca real-time menggunakan OpenWeather API dengan antarmuka yang responsif.</p>
+        <a href="https://github.com/raihananmarw/projek/tree/main/weather-app" target="_blank"
+           class="block text-center bg-blue-600 hover:bg-blue-700 text-white py-2 rounded transition">
+          🔗 Lihat di GitHub
+        </a>
+      </div>
 
-  <div class="bg-white dark:bg-gray-800 p-6 rounded shadow" data-aos="fade-up" data-aos-delay="200">
-    <h2 class="text-xl font-semibold">📂 E-ARSIP</h2>
-    <p>Aplikasi pengarsipan dokumen digital berbasis web.</p>
-    <a href="https://github.com/raihananmarw/projek/tree/main/e-arsip" class="text-blue-500 hover:underline">GitHub</a>
-  </div>
+      <!-- Card 2 -->
+      <div class="w-80 min-h-[440px] bg-white dark:bg-white/10 dark:backdrop-blur-lg border border-gray-200 dark:border-white/20 rounded-xl p-4 shadow-lg text-gray-800 dark:text-white"
+           data-aos="zoom-in" data-aos-delay="100">
+        <img src="images/proyek2.jpg" alt="Manajemen Aset" class="w-full h-48 object-cover rounded-lg mb-4">
+        <h3 class="text-xl font-semibold mb-2">📦 Manajemen Aset</h3>
+        <p class="text-sm mb-4 break-words">Aplikasi web untuk memantau dan mengelola aset atau inventaris perusahaan dan organisasi secara digital berbasis Django.</p>
+        <a href="https://github.com/raihananmarw/projek/tree/main/Aset%20Management" target="_blank"
+           class="block text-center bg-blue-600 hover:bg-blue-700 text-white py-2 rounded transition">
+          🔗 Lihat di GitHub
+        </a>
+      </div>
 
-  <div class="bg-white dark:bg-gray-800 p-6 rounded shadow" data-aos="fade-up" data-aos-delay="300">
-    <h2 class="text-xl font-semibold">🌦️ Aplikasi Cuaca</h2>
-    <p>Menampilkan data cuaca terkini menggunakan OpenWeather API.</p>
-    <a href="https://github.com/raihananmarw/projek/tree/main/weather-app" class="text-blue-500 hover:underline">GitHub</a>
-  </div>
+      <!-- Card 3 -->
+      <div class="w-80 min-h-[440px] bg-white dark:bg-white/10 dark:backdrop-blur-lg border border-gray-200 dark:border-white/20 rounded-xl p-4 shadow-lg text-gray-800 dark:text-white"
+           data-aos="flip-left" data-aos-delay="200">
+        <img src="images/proyek3.jpg" alt="Pembersih Sistem" class="w-full h-48 object-cover rounded-lg mb-4">
+        <h3 class="text-xl font-semibold mb-2">🧹 Pembersih Sistem</h3>
+        <p class="text-sm mb-4 break-words">Otomatisasi pembersihan cache & file sampah browser untuk menjaga performa komputer.</p>
+        <a href="https://github.com/raihananmarw/projek/tree/main/Automasi" target="_blank"
+           class="block text-center bg-blue-600 hover:bg-blue-700 text-white py-2 rounded transition">
+          🔗 Lihat di GitHub
+        </a>
+      </div>
 
-  <div class="bg-white dark:bg-gray-800 p-6 rounded shadow" data-aos="fade-up" data-aos-delay="400">
-    <h2 class="text-xl font-semibold">📊 ERP Sederhana</h2>
-    <p>ERP web untuk mengelola inventaris dan keuangan menggunakan Laravel dan MySQL. Projek ini masih proses karena ada masalah di composernya</p>
-    <a href="https://github.com/username/erp-sederhana" class="text-blue-500 hover:underline">GitHub</a>
+      <!-- Card 4 -->
+      <div class="w-80 min-h-[440px] bg-white dark:bg-white/10 dark:backdrop-blur-lg border border-gray-200 dark:border-white/20 rounded-xl p-4 shadow-lg text-gray-800 dark:text-white"
+           data-aos="flip-right" data-aos-delay="300">
+        <img src="images/proyek4.jpg" alt="E-Arsip" class="w-full h-48 object-cover rounded-lg mb-4">
+        <h3 class="text-xl font-semibold mb-2">📂 E-Arsip</h3>
+        <p class="text-sm mb-4 break-words">Platform digitalisasi arsip dokumen menggunakan web framework untuk efisiensi manajemen data.</p>
+        <a href="https://github.com/raihananmarw/projek/tree/main/e-arsip" target="_blank"
+           class="block text-center bg-blue-600 hover:bg-blue-700 text-white py-2 rounded transition">
+          🔗 Lihat di GitHub
+        </a>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="w-80 min-h-[440px] bg-white dark:bg-white/10 dark:backdrop-blur-lg border border-gray-200 dark:border-white/20 rounded-xl p-4 shadow-lg text-gray-800 dark:text-white"
+           data-aos="fade-down" data-aos-delay="400">
+        <h3 class="text-xl font-semibold mb-2">📊 ERP Sederhana</h3>
+        <p class="text-sm mb-4 break-words">Aplikasi ERP berbasis Laravel & MySQL untuk manajemen inventaris dan laporan keuangan sederhana.</p>
+        <a href="https://github.com/username/erp-sederhana" target="_blank"
+           class="block text-center bg-blue-600 hover:bg-blue-700 text-white py-2 rounded transition">
+          🔗 Lihat di GitHub
+        </a>
+      </div>
+
+    </div>
   </div>
 </main>
 
