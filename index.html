@@ -1,41 +1,124 @@
 <!DOCTYPE html>
-<html lang="id" class="">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Beranda | Raihan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beranda | Raihan </title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class',
+      darkMode: 'class'
     }
   </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <script src="js/darkmode.js" defer></script>
 </head>
-<body class="bg-white text-black dark:bg-gray-900 dark:text-white">
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-white font-sans transition duration-500">
 
-<nav class="p-4 bg-blue-600 dark:bg-gray-800 text-white flex justify-between">
-  <div class="flex space-x-4">
-    <a href="index.html">🏠 Beranda</a>
-    <a href="tentang.html">Tentang</a>
-    <a href="skill.html">Skill</a>
-    <a href="proyek.html">Proyek</a>
-    <a href="sertifikat.html">Sertifikat</a>
-    <a href="kontak.html">Kontak</a>
-  </div>
-  <button id="toggleDark" class="bg-white text-black dark:bg-gray-700 dark:text-white px-3 py-1 rounded">🌙 Mode</button>
-</nav>
+  <!-- Navbar -->
+  <nav class="p-4 bg-blue-600 dark:bg-gray-800 text-white flex justify-between">
+    <div class="flex space-x-4">
+      <a href="index.html">🏠 Beranda</a>
+      <a href="tentang.html">Tentang</a>
+      <a href="skill.html">Skill</a>
+      <a href="proyek.html">Proyek</a>
+      <a href="sertifikat.html">Sertifikat</a>
+      <a href="kontak.html">Kontak</a>
+    </div>
+    <button id="toggleDark" class="bg-white text-black dark:bg-gray-700 dark:text-white px-3 py-1 rounded">🌙</button>
+  </nav>
 
-<main class="p-6 text-center">
-  <h1 class="text-4xl font-bold mb-2">Halo, saya Raihan Anmar Widyasmoro!</h1>
-  <p class="text-lg mb-4">Software Engineering | IT Support | Design Graphis</p>
-  <a href="CV Raihan Anmar Widyasmoro.pdf" class="inline-block px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">📄 Download CV</a>
-</main>
+  <!-- Hero Section -->
+  <section class="text-center py-20 bg-gradient-to-r from-blue-600 to-teal-400 text-white">
+    <img src="images/PP Raihan.png" alt="Foto Profil Raihan" class="mx-auto w-40 h-60 rounded-full border-4 border-white shadow-lg" />
+    <h1 class="text-4xl font-bold mt-6">Raihan Anmar Widyasmoro</h1>
+    <p class="text-xl mt-2">Software Engineering | IT Support | AI Enthusiast</p>
+    <div class="mt-6 space-x-4">
+      <a href="kontak.html" class="bg-white text-blue-600 px-5 py-2 rounded shadow hover:bg-gray-200 transition">Hubungi Saya</a>
+      <a href="CV Raihan Anmar Widyasmoro.pdf" class="border border-white px-5 py-2 rounded hover:bg-white hover:text-blue-600 transition">Lihat CV</a>
+    </div>
+  </section>
 
-<!-- Footer -->
-<footer class="text-center text-sm text-gray-500 dark:text-gray-400 py-4 mt-10">
-  &copy; 2025 Raihan Anmar Widyasmoro
-</footer>
+  <!-- Tentang Singkat -->
+  <section class="max-w-4xl mx-auto py-16 px-4 text-center" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold mb-4">Tentang Saya</h2>
+    <p class="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
+      Saya adalah lulusan Informatika dari Universitas Teknologi Yogyakarta yang antusias di bidang Software Engineering, IT Support, dan AI. 
+      Saya suka membangun aplikasi web yang kreatif dan interaktif, serta terus memperluas skill saya dalam pengembangan teknologi modern.
+    </p>
+  </section>
+
+  <!-- Skill Ringkas -->
+  <section class="bg-gray-100 dark:bg-gray-800 py-16" data-aos="fade-up">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-semibold mb-10">Skill Utama</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+        <div class="flex flex-col items-center">
+          <i class="fab fa-html5 text-orange-500 text-4xl"></i>
+          <p>HTML</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <i class="fab fa-css3-alt text-blue-500 text-4xl"></i>
+          <p>CSS</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <i class="fab fa-js-square text-yellow-400 text-4xl"></i>
+          <p>JavaScript</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <i class="fab fa-php text-indigo-600 text-4xl"></i>
+          <p>PHP</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <i class="fab fa-python text-blue-400 text-4xl"></i>
+          <p>Python</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <i class="fas fa-database text-gray-600 text-4xl"></i>
+          <p>SQL</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <i class="fab fa-figma text-pink-500 text-4xl"></i>
+          <p>Figma</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <i class="fas fa-brain text-green-500 text-4xl"></i>
+          <p>AI Tools</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proyek Unggulan -->
+  <section class="py-16 px-4 max-w-6xl mx-auto" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold text-center mb-10">Proyek Unggulan</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="bg-white dark:bg-gray-800 p-6 rounded shadow" data-aos="fade-up">
+        <img src="images/proyek2.jpg" alt="Proyek 1" class="rounded mb-4">
+        <h2 class="text-xl font-semibold">💼 Aset Management</h2>
+        <p>Aplikasi untuk mengelola aset internal secara digital, menggunakan python dengan framework django dan basis data SQLite.</p>
+        <a href="https://github.com/raihananmarw/projek/tree/main/Aset%20Management" class="text-blue-500 hover:underline">GitHub</a>
+      </div>
+      <div class="bg-white dark:bg-gray-800 p-6 rounded shadow" data-aos="fade-up" data-aos-delay="300">
+        <img src="images/proyek1.jpg" alt="Proyek 1" class="rounded mb-4">
+        <h2 class="text-xl font-semibold">🌦️ Aplikasi Cuaca</h2>
+        <p>Menampilkan data prediksi cuaca terkini atau secara real-time menggunakan OpenWeather API.</p>
+        <a href="https://github.com/raihananmarw/projek/tree/main/weather-app" class="text-blue-500 hover:underline">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 dark:bg-gray-800 text-center py-6 text-sm text-gray-600 dark:text-gray-300">
+    &copy; 2025 Raihan Anmar Widyasmoro.
+  </footer>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 
 </body>
 </html>
