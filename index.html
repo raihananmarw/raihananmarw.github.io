@@ -1,123 +1,99 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="dark">
 <head>
+  <script>
+    const userTheme = localStorage.getItem('theme');
+    if (userTheme === 'dark' || userTheme === null) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Beranda | Raihan </title>
+  <title>Portofolio - Home</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       darkMode: 'class'
     }
   </script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <script src="js/darkmode.js" defer></script>
 </head>
-<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-white font-sans transition duration-500">
+
+<body class="font-sans flex flex-col min-h-screen bg-white text-black dark:bg-[#0d1117] dark:text-white transition-colors duration-300">
 
   <!-- Navbar -->
-  <nav class="p-4 bg-blue-600 dark:bg-gray-800 text-white flex justify-between">
-    <div class="flex space-x-4">
-      <a href="index.html">🏠 Beranda</a>
-      <a href="tentang.html">Tentang</a>
-      <a href="skill.html">Skill</a>
-      <a href="proyek.html">Proyek</a>
-      <a href="sertifikat.html">Sertifikat</a>
-      <a href="kontak.html">Kontak</a>
+<header class="fixed w-full z-50 bg-white dark:bg-[#0f172a] shadow-md transition-colors duration-300">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-black dark:text-white">Raport.</h1>
+    <div class="flex items-center space-x-6 text-sm">
+      <nav class="space-x-6">
+        <a href="index.html" class="hover:text-blue-600 dark:hover:text-blue-400 font-bold text-blue-700 dark:text-blue-400">Beranda</a>
+        <a href="tentang.html" class="hover:text-blue-600 dark:hover:text-blue-400">Tentang</a>
+        <a href="proyek.html" class="hover:text-blue-600 dark:hover:text-blue-400">Proyek</a>
+        <a href="skill.html" class="hover:text-blue-600 dark:hover:text-blue-400">Skill</a>
+        <a href="sertifikat.html" class="hover:text-blue-600 dark:hover:text-blue-400">Sertifikat</a>
+        <a href="kontak.html" class="hover:text-blue-600 dark:hover:text-blue-400">Kontak</a>
+      </nav>
+      <!-- Dark Mode Toggle -->
+      <button id="toggle-dark" class="text-black dark:text-white hover:text-yellow-500 dark:hover:text-yellow-400 text-xl transition">
+        <i class="fas fa-moon" id="theme-icon"></i>
+      </button>
     </div>
-    <button id="toggleDark" class="bg-white text-black dark:bg-gray-700 dark:text-white px-3 py-1 rounded">🌙</button>
-  </nav>
+  </div>
+</header>
 
-  <!-- Hero Section -->
-  <section class="text-center py-20 bg-gradient-to-r from-blue-600 to-teal-400 text-white">
-    <img src="images/PP Raihan.png" alt="Foto Profil Raihan" class="mx-auto w-40 h-60 rounded-full border-4 border-white shadow-lg" />
-    <h1 class="text-4xl font-bold mt-6">Raihan Anmar Widyasmoro</h1>
-    <p class="text-xl mt-2">Front End Developer | IT Support | Software Engineering</p>
-    <div class="mt-6 space-x-4">
-      <a href="kontak.html" class="bg-white text-blue-600 px-5 py-2 rounded shadow hover:bg-gray-200 transition">Hubungi Saya</a>
-      <a href="CV Raihan Anmar Widyasmoro.pdf" class="border border-white px-5 py-2 rounded hover:bg-white hover:text-blue-600 transition">Lihat CV</a>
+  <!-- Main Content -->
+  <main class="flex-grow pt-24 flex items-center justify-center text-center px-6" data-aos="fade-up">
+    <div>
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">Halo! Saya Raihan 👋</h2>
+      <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-6 max-w-xl mx-auto">
+        Web Developer & UI Designer yang antusias terhadap teknologi, desain, dan pengembangan aplikasi.
+      </p>
+      <a href="tentang.html" class="px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded text-white transition">
+        Lebih Tentang Saya
+      </a>
     </div>
-  </section>
+  </main>
 
-  <!-- Tentang Singkat -->
-  <section class="max-w-4xl mx-auto py-16 px-4 text-center" data-aos="fade-up">
-    <h2 class="text-3xl font-semibold mb-4">Tentang Saya</h2>
-    <p class="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
-      Saya adalah lulusan Informatika dari Universitas Teknologi Yogyakarta yang antusias di bidang Software Engineering, IT Support, dan Front End Developer. 
-      Saya suka membangun aplikasi web yang kreatif dan interaktif, serta terus memperluas skill saya dalam pengembangan teknologi modern.
-    </p>
-  </section>
+<!-- Footer -->
+<footer class="text-center text-gray-600 dark:text-gray-400 py-6 border-t border-gray-300 dark:border-white/10 mt-10">
+  <p>&copy; 2025 Raihan Anmar Widyasmoro.</p>
+</footer>
 
-  <!-- Skill Ringkas -->
-  <section class="bg-gray-100 dark:bg-gray-800 py-16" data-aos="fade-up">
-    <div class="max-w-5xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-semibold mb-10">Skill Utama</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
-        <div class="flex flex-col items-center">
-          <i class="fab fa-html5 text-orange-500 text-4xl"></i>
-          <p>HTML</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <i class="fab fa-css3-alt text-blue-500 text-4xl"></i>
-          <p>CSS</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <i class="fab fa-js-square text-yellow-400 text-4xl"></i>
-          <p>JavaScript</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <i class="fab fa-php text-indigo-600 text-4xl"></i>
-          <p>PHP</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <i class="fab fa-python text-blue-400 text-4xl"></i>
-          <p>Python</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <i class="fas fa-database text-gray-600 text-4xl"></i>
-          <p>SQL</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <i class="fab fa-figma text-pink-500 text-4xl"></i>
-          <p>Figma</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <i class="fas fa-brain text-green-500 text-4xl"></i>
-          <p>AI Tools</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Proyek Unggulan -->
-  <section class="py-16 px-4 max-w-6xl mx-auto" data-aos="fade-up">
-    <h2 class="text-3xl font-semibold text-center mb-10">Proyek Unggulan</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="bg-white dark:bg-gray-800 p-6 rounded shadow" data-aos="fade-up">
-        <img src="images/proyek2.jpg" alt="Proyek 1" class="rounded mb-4">
-        <h2 class="text-xl font-semibold">💼 Aset Management</h2>
-        <p>Aplikasi untuk mengelola aset internal secara digital, menggunakan python dengan framework django dan basis data SQLite.</p>
-        <a href="https://github.com/raihananmarw/projek/tree/main/Aset%20Management" class="text-blue-500 hover:underline">GitHub</a>
-      </div>
-      <div class="bg-white dark:bg-gray-800 p-6 rounded shadow" data-aos="fade-up" data-aos-delay="300">
-        <img src="images/proyek1.jpg" alt="Proyek 1" class="rounded mb-4">
-        <h2 class="text-xl font-semibold">🌦️ Aplikasi Cuaca</h2>
-        <p>Menampilkan data prediksi cuaca terkini atau secara real-time menggunakan OpenWeather API.</p>
-        <a href="https://github.com/raihananmarw/projek/tree/main/weather-app" class="text-blue-500 hover:underline">GitHub</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-100 dark:bg-gray-800 text-center py-6 text-sm text-gray-600 dark:text-gray-300">
-    &copy; 2025 Raihan Anmar Widyasmoro.
-  </footer>
-
-  <!-- AOS Script -->
+  <!-- AOS Animation JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init();
+    AOS.init({ once: true });
+  </script>
+
+  <!-- Dark Mode Script -->
+  <script>
+    const toggleBtn = document.getElementById('toggle-dark');
+    const html = document.documentElement;
+    const icon = document.getElementById('theme-icon');
+
+    if (localStorage.getItem('theme') === 'dark') {
+      html.classList.add('dark');
+      icon.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      if (html.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+        icon.classList.replace('fa-moon', 'fa-sun');
+      } else {
+        localStorage.setItem('theme', 'light');
+        icon.classList.replace('fa-sun', 'fa-moon');
+      }
+    });
   </script>
 
 </body>
