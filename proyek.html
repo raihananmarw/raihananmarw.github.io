@@ -1,131 +1,142 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="dark">
 <head>
-  <meta charset="UTF-8">
-  <title>Proyek | Raihan</title>
+  <script>
+    const userTheme = localStorage.getItem('theme');
+    if (userTheme === 'dark' || userTheme === null) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyek | Portfolio</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class',
+      darkMode: 'class'
     }
   </script>
-  <script src="js/darkmode.js" defer></script>
-
-<!-- AOS CSS -->
-<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-<!-- AOS JS -->
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 1000,
-    once: true,
-  });
-</script>
-
 </head>
-<body class="bg-white text-black dark:bg-gray-900 dark:text-white">
 
-<!-- Navbar -->
-<nav class="p-4 bg-blue-600 dark:bg-gray-800 text-white flex justify-between">
-  <div class="flex space-x-4">
-    <a href="index.html">🏠 Beranda</a>
-    <a href="tentang.html">Tentang</a>
-    <a href="skill.html">Skill</a>
-    <a href="proyek.html">Proyek</a>
-    <a href="sertifikat.html">Sertifikat</a>
-    <a href="kontak.html">Kontak</a>
+<body class="font-sans bg-white text-black dark:bg-[#0d1117] dark:text-white transition-colors duration-300">
+
+  <!-- Navbar -->
+<header class="fixed w-full z-50 bg-white dark:bg-[#0f172a] shadow-md transition-colors duration-300">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-black dark:text-white">Raport.</h1>
+    <div class="flex items-center space-x-6 text-sm">
+      <nav class="space-x-6">
+        <a href="index.html" class="hover:text-blue-600 dark:hover:text-blue-400">Beranda</a>
+        <a href="tentang.html" class="hover:text-blue-600 dark:hover:text-blue-400">Tentang</a>
+        <a href="proyek.html" class="hover:text-blue-600 dark:hover:text-blue-400 font-bold text-blue-700 dark:text-blue-400">Proyek</a>
+        <a href="skill.html" class="hover:text-blue-600 dark:hover:text-blue-400">Skill</a>
+        <a href="sertifikat.html" class="hover:text-blue-600 dark:hover:text-blue-400">Sertifikat</a>
+        <a href="kontak.html" class="hover:text-blue-600 dark:hover:text-blue-400">Kontak</a>
+      </nav>
+      <!-- Dark Mode Toggle -->
+      <button id="toggle-dark" class="text-black dark:text-white hover:text-yellow-500 dark:hover:text-yellow-400 text-xl transition">
+        <i class="fas fa-moon" id="theme-icon"></i>
+      </button>
+    </div>
   </div>
-  <button id="toggleDark" class="bg-white text-black dark:bg-gray-700 dark:text-white px-3 py-1 rounded">🌙 Mode</button>
-</nav>
-
-<!-- Header -->
-<header class="bg-gradient-to-r from-blue-600 to-teal-400 text-white py-6 text-center shadow-md">
-  <h1 class="text-3xl font-bold">🚀 Projek Saya</h1>
 </header>
 
-<!-- Main Content -->
-<main class="p-6">
-  <div class="pb-4">
-    <div class="flex flex-wrap justify-center gap-6">
+  <!-- Konten -->
+  <main class="pt-32 pb-16 px-6 max-w-6xl mx-auto space-y-12">
+    <!-- Judul -->
+    <section data-aos="fade-up">
+      <h2 class="text-3xl font-bold text-blue-500 dark:text-blue-400 mb-4">Proyek Saya</h2>
+      <p class="text-gray-300 dark:text-gray-300">Berikut beberapa proyek yang pernah saya kerjakan secara pribadi maupun kolaboratif.</p>
+    </section>
 
-      <!-- Card 1 -->
-      <div class="w-80 min-h-[440px] bg-white dark:bg-white/10 dark:backdrop-blur-lg border border-gray-200 dark:border-white/20 rounded-xl p-4 shadow-lg text-gray-800 dark:text-white"
-           data-aos="fade-up">
-        <img src="images/proyek1.jpg" alt="Aplikasi Cuaca" class="w-full h-48 object-cover rounded-lg mb-4">
-        <h3 class="text-xl font-semibold mb-2">🌦️ Aplikasi Cuaca</h3>
-        <p class="text-sm mb-4 break-words">Menampilkan info cuaca real-time menggunakan OpenWeather API dengan antarmuka yang responsif.</p>
-        <a href="https://github.com/raihananmarw/projek/tree/main/weather-app" target="_blank"
-           class="block text-center bg-blue-600 hover:bg-blue-700 text-white py-2 rounded transition">
-          🔗 Lihat di GitHub
-        </a>
+    <!-- Kartu Proyek -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="100">
+
+      <!-- Proyek 1 -->
+      <div class="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl p-4 shadow hover:scale-[1.02] hover:shadow-lg transition-transform duration-300">
+        <img src="images/proyek1.jpg" alt="Aplikasi Cuaca" class="rounded mb-4 object-cover w-full h-40">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">🌦️ Aplikasi Cuaca</h3>
+        <p class="text-sm text-gray-700 dark:text-gray-300 mb-4">Menampilkan cuaca real-time dari OpenWeather API dengan UI responsif.</p>
+        <a href="#" class="text-blue-600 dark:text-blue-400 hover:underline" target="_blank">🔗 Lihat di GitHub</a>
       </div>
 
-      <!-- Card 2 -->
-      <div class="w-80 min-h-[440px] bg-white dark:bg-white/10 dark:backdrop-blur-lg border border-gray-200 dark:border-white/20 rounded-xl p-4 shadow-lg text-gray-800 dark:text-white"
-           data-aos="zoom-in" data-aos-delay="100">
-        <img src="images/proyek2.jpg" alt="Manajemen Aset" class="w-full h-48 object-cover rounded-lg mb-4">
-        <h3 class="text-xl font-semibold mb-2">📦 Manajemen Aset</h3>
-        <p class="text-sm mb-4 break-words">Aplikasi web untuk memantau dan mengelola aset atau inventaris perusahaan dan organisasi secara digital berbasis Web.</p>
-        <a href="https://github.com/raihananmarw/projek/tree/main/Aset%20Management" target="_blank"
-           class="block text-center bg-blue-600 hover:bg-blue-700 text-white py-2 rounded transition">
-          🔗 Lihat di GitHub
-        </a>
+      <!-- Proyek 2 -->
+      <div class="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl p-4 shadow hover:scale-[1.02] hover:shadow-xl transition-transform duration-300">
+        <img src="images/proyek2.jpg" alt="Manajemen Aset" class="rounded mb-4 object-cover w-full h-40">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">📦 Manajemen Aset</h3>
+        <p class="text-sm text-gray-700 dark:text-gray-300 mb-4">Aplikasi Django untuk manajemen aset perusahaan.</p>
+        <a href="https://github.com/raihananmarw/projek/tree/main/Aset%20Management" class="text-blue-600 dark:text-blue-400 hover:underline" target="_blank">🔗 Lihat di GitHub</a>
       </div>
 
-      <!-- Card 3 -->
-      <div class="w-80 min-h-[440px] bg-white dark:bg-white/10 dark:backdrop-blur-lg border border-gray-200 dark:border-white/20 rounded-xl p-4 shadow-lg text-gray-800 dark:text-white"
-           data-aos="flip-left" data-aos-delay="200">
-        <img src="images/proyek3.jpg" alt="Pembersih Sistem" class="w-full h-48 object-cover rounded-lg mb-4">
-        <h3 class="text-xl font-semibold mb-2">🧹 Pembersih Sistem</h3>
-        <p class="text-sm mb-4 break-words">Otomatisasi pembersihan cache & file sampah browser untuk menjaga performa komputer.</p>
-        <a href="https://github.com/raihananmarw/projek/tree/main/Automasi" target="_blank"
-           class="block text-center bg-blue-600 hover:bg-blue-700 text-white py-2 rounded transition">
-          🔗 Lihat di GitHub
-        </a>
+      <!-- Proyek 3 -->
+      <div class="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl p-4 shadow hover:scale-[1.02] hover:shadow-xl transition-transform duration-300">
+        <img src="images/proyek3.jpg" alt="Pembersih Sistem" class="rounded mb-4 object-cover w-full h-40">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">🧹 Pembersih Sistem</h3>
+        <p class="text-sm text-gray-700 dark:text-gray-300 mb-4">Otomatisasi pembersihan file sampah sistem & browser.</p>
+        <a href="https://github.com/raihananmarw/projek/tree/main/Automasi" class="text-blue-600 dark:text-blue-400 hover:underline" target="_blank">🔗 Lihat di GitHub</a>
       </div>
 
-      <!-- Card 4 -->
-      <div class="w-80 min-h-[440px] bg-white dark:bg-white/10 dark:backdrop-blur-lg border border-gray-200 dark:border-white/20 rounded-xl p-4 shadow-lg text-gray-800 dark:text-white"
-           data-aos="flip-right" data-aos-delay="300">
-        <img src="images/proyek4.jpg" alt="E-Arsip" class="w-full h-48 object-cover rounded-lg mb-4">
-        <h3 class="text-xl font-semibold mb-2">📂 E-Arsip</h3>
-        <p class="text-sm mb-4 break-words">Platform digitalisasi arsip dokumen menggunakan web framework untuk efisiensi manajemen data.</p>
-        <a href="https://github.com/raihananmarw/projek/tree/main/e-arsip" target="_blank"
-           class="block text-center bg-blue-600 hover:bg-blue-700 text-white py-2 rounded transition">
-          🔗 Lihat di GitHub
-        </a>
+      <!-- Proyek 4 -->
+      <div class="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl p-4 shadow hover:scale-[1.02] hover:shadow-xl transition-transform duration-300">
+        <img src="images/proyek4.jpg" alt="E-Arsip" class="rounded mb-4 object-cover w-full h-40">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">📂 E-Arsip</h3>
+        <p class="text-sm text-gray-700 dark:text-gray-300 mb-4">Sistem pengarsipan digital dengan fitur pencarian cepat dan upload dokumen.</p>
+        <a href="https://github.com/raihananmarw/projek/tree/main/e-arsip" class="text-blue-600 dark:text-blue-400 hover:underline" target="_blank">🔗 Lihat di GitHub</a>
       </div>
 
-      <!-- Card 5 -->
-      <div class="w-80 min-h-[440px] bg-white dark:bg-white/10 dark:backdrop-blur-lg border border-gray-200 dark:border-white/20 rounded-xl p-4 shadow-lg text-gray-800 dark:text-white"
-           data-aos="fade-down" data-aos-delay="400">
-        <img src="images/proyek5.jpg" alt="E-Arsip" class="w-full h-48 object-cover rounded-lg mb-4">
-        <h3 class="text-xl font-semibold mb-2">🧾 E-Kasir </h3>
-        <p class="text-sm mb-4 break-words">Aplikasi kasir berbasis web menggunakan python dan mysql sebagai db, Terdapat fitur stok barang yang sudah crud,transaksi penjualan dan riwayat penjualan.</p>
-        <a href="https://github.com/raihananmarw/projek/tree/main/kasir_web" target="_blank"
-           class="block text-center bg-blue-600 hover:bg-blue-700 text-white py-2 rounded transition">
-          🔗 Lihat di GitHub
-        </a>
+      <!-- Proyek 5 -->
+      <div class="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl p-4 shadow hover:scale-[1.02] hover:shadow-xl transition-transform duration-300">
+        <img src="images/proyek5.jpg" alt="E-Kasir" class="rounded mb-4 object-cover w-full h-40">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">🧾 E-Kasir</h3>
+        <p class="text-sm text-gray-700 dark:text-gray-300 mb-4">Sistem kasir berbasis web dengan laporan otomatis dan histori transaksi.</p>
+        <a href="https://github.com/raihananmarw/projek/tree/main/kasir_web" class="text-blue-600 dark:text-blue-400 hover:underline" target="_blank">🔗 Lihat di GitHub</a>
       </div>
 
     </div>
-  </div>
-</main>
+  </main>
 
-<!-- Footer -->
-<footer class="text-center text-sm text-gray-500 dark:text-gray-400 py-4 mt-10">
-  &copy; 2025 Raihan Anmar Widyasmoro
-</footer>
+  <!-- Footer -->
+  <footer class="text-center text-gray-600 dark:text-gray-400 py-6 border-t border-gray-300 dark:border-white/10 mt-10 transition-colors">
+    <p>&copy; 2025 Raihan Anmar Widyasmoro.</p>
+  </footer>
 
-<!-- AOS Script -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 800, // Durasi animasi
-    once: true     // Hanya animasi sekali
-  });
-</script>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <!-- Dark Mode Script -->
+  <script>
+    const toggleBtn = document.getElementById('toggle-dark');
+    const html = document.documentElement;
+    const icon = document.getElementById('theme-icon');
+
+    if (localStorage.getItem('theme') === 'dark') {
+      html.classList.add('dark');
+      icon.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      if (html.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+        icon.classList.replace('fa-moon', 'fa-sun');
+      } else {
+        localStorage.setItem('theme', 'light');
+        icon.classList.replace('fa-sun', 'fa-moon');
+      }
+    });
+  </script>
 
 </body>
 </html>
