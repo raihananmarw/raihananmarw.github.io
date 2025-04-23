@@ -1,103 +1,140 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
+  <script>
+    const userTheme = localStorage.getItem('theme');
+    if (userTheme === 'dark' || userTheme === null) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sertifikat | Raihan</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class',
+      darkMode: 'class'
     }
   </script>
-  <script src="js/darkmode.js" defer></script>
 </head>
-<body class="bg-white text-black dark:bg-gray-900 dark:text-white transition-colors duration-500">
+<body class="font-sans antialiased bg-white text-black dark:bg-[#0d0d0d] dark:text-white transition-colors duration-300">
 
-<nav class="p-4 bg-blue-600 dark:bg-gray-800 text-white flex justify-between">
-  <div class="flex space-x-4">
-    <a href="index.html">🏠 Beranda</a>
-    <a href="tentang.html">Tentang</a>
-    <a href="skill.html">Skill</a>
-    <a href="proyek.html">Proyek</a>
-    <a href="sertifikat.html">Sertifikat</a>
-    <a href="kontak.html">Kontak</a>
-  </div>
-  <button id="toggleDark" class="bg-white text-black dark:bg-gray-700 dark:text-white px-3 py-1 rounded">🌙 Mode</button>
-</nav>
-
-    <header class="bg-gradient-to-r from-blue-600 to-teal-400 text-white py-6 text-center shadow-md">
-    <h1 class="text-3xl font-bold">Sertifikat</h1>
-    </header>
-
-  <main class="max-w-6xl mx-auto px-4 py-10">
-    <h2 class="text-2xl font-semibold mb-6 border-l-4 border-blue-500 pl-4">Daftar Sertifikat</h2>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <img src="sertifikat/Sertifikat 1.jpg" alt="Sertifikat 1" class="rounded-xl shadow-md transition duration-300 ease-in-out transform hover:scale-110 opacity-0 animate-fade-in delay-100">
-        <img src="sertifikat/Sertifikat 2.jpg" alt="Sertifikat 2" class="rounded-xl shadow-md transition duration-300 ease-in-out transform hover:scale-110 opacity-0 animate-fade-in delay-200">
-        <img src="sertifikat/Sertifikat Python.jpg" alt="Sertifikat 3" class="rounded-xl shadow-md transition duration-300 ease-in-out transform hover:scale-110 opacity-0 animate-fade-in delay-300">
-        <img src="sertifikat/Sertifikat Excel.jpg" alt="Sertifikat 4" class="rounded-xl shadow-md transition duration-300 ease-in-out transform hover:scale-110 opacity-0 animate-fade-in delay-400">
-        <img src="sertifikat/Sertifikat Data Engineering.jpg" alt="Sertifikat 5" class="rounded-xl shadow-md transition duration-300 ease-in-out transform hover:scale-110 opacity-0 animate-fade-in delay-500">
-        <img src="sertifikat/Sertifikat Marchine Learning.jpg" alt="Sertifikat 6" class="rounded-xl shadow-md transition duration-300 ease-in-out transform hover:scale-110 opacity-0 animate-fade-in delay-600">
+  <!-- Navbar -->
+  <header class="fixed w-full z-50 bg-white dark:bg-[#0f172a] shadow-md transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-black dark:text-white">Raport.</h1>
+      <div class="flex items-center space-x-6 text-sm">
+        <nav class="space-x-6">
+          <a href="index.html" class="hover:text-blue-600 dark:hover:text-blue-400">Beranda</a>
+          <a href="tentang.html" class="hover:text-blue-600 dark:hover:text-blue-400">Tentang</a>
+          <a href="proyek.html" class="hover:text-blue-600 dark:hover:text-blue-400">Proyek</a>
+          <a href="skill.html" class="hover:text-blue-600 dark:hover:text-blue-400">Skill</a>
+          <a href="sertifikat.html" class="hover:text-blue-600 dark:hover:text-blue-400 font-bold text-blue-700 dark:text-blue-400">Sertifikat</a>
+          <a href="kontak.html" class="hover:text-blue-600 dark:hover:text-blue-400">Kontak</a>
+        </nav>
+        <!-- Toggle Dark Mode -->
+        <button id="toggle-dark" class="text-black dark:text-white hover:text-yellow-500 dark:hover:text-yellow-400 text-xl transition">
+          <i class="fas fa-moon" id="theme-icon"></i>
+        </button>
       </div>
-
-      <!-- Modal Preview Sertifikat -->
-    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
-    <div class="relative max-w-4xl w-full p-4">
-      <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-2xl font-bold hover:text-red-400">✖️</button>
-      <img id="modalImage" src="" alt="Preview Sertifikat" class="w-full max-h-[80vh] rounded-lg shadow-xl object-contain mx-auto">
     </div>
-    </div>
-  
+  </header>
 
-  </main>
+    <main class="pt-24 px-4 pb-16">
+      <section class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-blue-500 dark:text-blue-400 text-center mb-10" data-aos="fade-up">📄 Sertifikat Saya</h2>
+    
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Sertifikat 1 -->
+          <div class="bg-white dark:bg-white/10 border border-gray-300 dark:border-white/20 rounded-xl p-4 shadow transition" data-aos="zoom-in">
+            <img src="sertifikat/Sertifikat 1.jpg" alt="Sertifikat 1" class="rounded-lg w-full h-40 object-cover mb-4" />
+            <h3 class="text-lg font-semibold text-blue-600 dark:text-blue-300 mb-1">Web Development - Dicoding</h3>
+            <p class="text-sm text-gray-700 dark:text-gray-300 mb-2">Diterbitkan oleh Dicoding Indonesia</p>
+            <a href="sertifikat/Sertifikat 1.jpg" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline text-sm">🔗 Lihat Sertifikat</a>
+          </div>
+    
+          <!-- Sertifikat 2 -->
+          <div class="bg-white dark:bg-white/10 border border-gray-300 dark:border-white/20 rounded-xl p-4 shadow transition" data-aos="zoom-in" data-aos-delay="100">
+            <img src="sertifikat/Sertifikat 2.jpg" alt="Sertifikat 2" class="rounded-lg w-full h-40 object-cover mb-4" />
+            <h3 class="text-lg font-semibold text-blue-600 dark:text-blue-300 mb-1">Python Basic - Sololearn</h3>
+            <p class="text-sm text-gray-700 dark:text-gray-300 mb-2">Diterbitkan oleh Sololearn</p>
+            <a href="sertifikat/Sertifikat 2.jpg" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline text-sm">🔗 Lihat Sertifikat</a>
+          </div>
+    
+          <!-- Sertifikat 3 -->
+          <div class="bg-white dark:bg-white/10 border border-gray-300 dark:border-white/20 rounded-xl p-4 shadow transition" data-aos="zoom-in" data-aos-delay="200">
+            <img src="sertifikat/Sertifikat Python.jpg" alt="Python" class="rounded-lg w-full h-40 object-cover mb-4" />
+            <h3 class="text-lg font-semibold text-blue-600 dark:text-blue-300 mb-1">UI/UX Design - Figma</h3>
+            <p class="text-sm text-gray-700 dark:text-gray-300 mb-2">Diterbitkan oleh Figma Academy</p>
+            <a href="sertifikat/Sertifikat Python.jpg" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline text-sm">🔗 Lihat Sertifikat</a>
+          </div>
+    
+          <!-- Sertifikat 4 -->
+          <div class="bg-white dark:bg-white/10 border border-gray-300 dark:border-white/20 rounded-xl p-4 shadow transition" data-aos="zoom-in">
+            <img src="sertifikat/Sertifikat Excel.jpg" alt="Excel" class="rounded-lg w-full h-40 object-cover mb-4" />
+            <h3 class="text-lg font-semibold text-blue-600 dark:text-blue-300 mb-1">Web Development - Dicoding</h3>
+            <p class="text-sm text-gray-700 dark:text-gray-300 mb-2">Diterbitkan oleh Dicoding Indonesia</p>
+            <a href="sertifikat/Sertifikat Excel.jpg" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline text-sm">🔗 Lihat Sertifikat</a>
+          </div>
+    
+          <!-- Sertifikat 5 -->
+          <div class="bg-white dark:bg-white/10 border border-gray-300 dark:border-white/20 rounded-xl p-4 shadow transition" data-aos="zoom-in" data-aos-delay="100">
+            <img src="sertifikat/Sertifikat Data Engineering.jpg" alt="Data Engineering" class="rounded-lg w-full h-40 object-cover mb-4" />
+            <h3 class="text-lg font-semibold text-blue-600 dark:text-blue-300 mb-1">Python Basic - Sololearn</h3>
+            <p class="text-sm text-gray-700 dark:text-gray-300 mb-2">Diterbitkan oleh Sololearn</p>
+            <a href="sertifikat/Sertifikat Data Engineering.jpg" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline text-sm">🔗 Lihat Sertifikat</a>
+          </div>
+    
+          <!-- Sertifikat 6 -->
+          <div class="bg-white dark:bg-white/10 border border-gray-300 dark:border-white/20 rounded-xl p-4 shadow transition" data-aos="zoom-in" data-aos-delay="200">
+            <img src="sertifikat/Sertifikat Marchine Learning.jpg" alt="Marchine Learning" class="rounded-lg w-full h-40 object-cover mb-4" />
+            <h3 class="text-lg font-semibold text-blue-600 dark:text-blue-300 mb-1">UI/UX Design - Figma</h3>
+            <p class="text-sm text-gray-700 dark:text-gray-300 mb-2">Diterbitkan oleh Figma Academy</p>
+            <a href="sertifikat/Sertifikat Marchine Learning.jpg" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline text-sm">🔗 Lihat Sertifikat</a>
+          </div>
+        </div>
+      </section>
+    </main>
 
-  <footer class="text-center text-sm text-gray-500 py-4 mt-10">
-    &copy; 2025 Raihan Anmar Widyasmoro
+  <!-- Footer -->
+  <footer class="text-center text-gray-600 dark:text-gray-400 py-6 border-t border-gray-300 dark:border-white/10 mt-10">
+    <p>&copy; 2025 Raihan Anmar Widyasmoro.</p>
   </footer>
 
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    const modal = document.getElementById("imageModal");
-    const modalImage = document.getElementById("modalImage");
-  
-    // Semua gambar sertifikat
-    document.querySelectorAll('img[src^="sertifikat/"]').forEach(img => {
-      img.addEventListener("click", () => {
-        modalImage.src = img.src;
-        modal.classList.remove("hidden");
-      });
-    });
-  
-    // Fungsi untuk menutup modal
-    function closeModal() {
-      modal.classList.add("hidden");
-      modalImage.src = "";
+    AOS.init();
+  </script>
+
+  <!-- Dark Mode Script -->
+  <script>
+    const toggleBtn = document.getElementById('toggle-dark');
+    const html = document.documentElement;
+    const icon = document.getElementById('theme-icon');
+
+    if (localStorage.getItem('theme') === 'dark') {
+      html.classList.add('dark');
+      icon.classList.replace('fa-moon', 'fa-sun');
     }
-  
-    // Tutup modal jika klik di luar gambar
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        closeModal();
+
+    toggleBtn.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      if (html.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+        icon.classList.replace('fa-moon', 'fa-sun');
+      } else {
+        localStorage.setItem('theme', 'light');
+        icon.classList.replace('fa-sun', 'fa-moon');
       }
     });
   </script>
-
-  <style>
-    @keyframes fade-in {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .animate-fade-in {
-      animation: fade-in 0.8s ease forwards;
-    }
-  </style>
 
 </body>
 </html>
