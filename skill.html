@@ -1,45 +1,65 @@
 <!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Skill Saya</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = { darkMode: 'class' }
-  </script>
-  <script src="js/darkmode.js" defer></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
- <!-- AOS CSS -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<html lang="id" class="scroll-smooth">
+  <head>
+    <script>
+      // Cek preferensi dark mode saat awal load
+      const userTheme = localStorage.getItem('theme');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  
+      if (userTheme === 'dark' || (!userTheme && systemPrefersDark)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+  
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skill - Portfolio</title>
+  
+    <!-- CSS dan JS eksternal dimuat setelah skrip theme -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class'
+      }
+    </script>
+  </head>  
+  <body class="font-sans flex flex-col min-h-screen bg-white text-black dark:bg-[#0d1117] dark:text-white transition-colors duration-300">
 
-</head>
-<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-white font-sans transition-colors duration-500">
-
-  <!-- Navbar -->
-  <nav class="p-4 bg-blue-600 dark:bg-gray-800 text-white flex justify-between">
-    <div class="flex space-x-4">
-      <a href="index.html">🏠 Beranda</a>
-      <a href="tentang.html">Tentang</a>
-      <a href="skill.html">Skill</a>
-      <a href="proyek.html">Proyek</a>
-      <a href="sertifikat.html">Sertifikat</a>
-      <a href="kontak.html">Kontak</a>
+    <!-- Navbar -->
+  <header class="fixed w-full z-50 bg-white dark:bg-[#0f172a] shadow-md transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-black dark:text-white">Raport.</h1>
+      <div class="flex items-center space-x-6 text-sm">
+        <nav class="space-x-6">
+          <a href="index.html" class="hover:text-blue-600 dark:hover:text-blue-400">Beranda</a>
+          <a href="tentang.html" class="hover:text-blue-600 dark:hover:text-blue-400">Tentang</a>
+          <a href="proyek.html" class="hover:text-blue-600 dark:hover:text-blue-400">Proyek</a>
+          <a href="skill.html" class="hover:text-blue-600 dark:hover:text-blue-400 font-bold text-blue-700 dark:text-blue-400">Skill</a>
+          <a href="sertifikat.html" class="hover:text-blue-600 dark:hover:text-blue-400">Sertifikat</a>
+          <a href="kontak.html" class="hover:text-blue-600 dark:hover:text-blue-400">Kontak</a>
+        </nav>
+        <!-- Dark Mode Toggle -->
+        <button id="toggle-dark" class="text-black dark:text-white hover:text-yellow-500 dark:hover:text-yellow-400 text-xl transition">
+          <i class="fas fa-moon" id="theme-icon"></i>
+        </button>
+      </div>
     </div>
-    <button id="toggleDark" class="bg-white text-black dark:bg-gray-700 dark:text-white px-3 py-1 rounded">🌙 Mode</button>
-  </nav>
-
-  <!-- Header -->
-  <header class="bg-gradient-to-r from-blue-600 to-teal-400 text-white py-6 text-center shadow-md">
-    <h1 class="text-3xl font-bold">Skill Saya</h1>
   </header>
 
-  <!-- Konten -->
-  <main class="max-w-4xl mx-auto px-4 py-10">
+  <!-- Main Content -->
+  <main class="flex-grow pt-24 pb-10 max-w-4xl mx-auto px-4">
 
     <!-- Bahasa Pemrograman -->
-    <h2 class="text-2xl font-semibold mb-6 border-l-4 border-blue-500 pl-4" data-aos="fade-right">👨‍💻 Bahasa Pemrograman</h2>
+    <h2 class="text-2xl font-semibold mb-6 border-l-4 border-blue-500 dark:border-blue-700 pl-4" data-aos="fade-right">👨‍💻 Bahasa Pemrograman</h2>
     <div class="grid grid-cols-2 sm:grid-cols-3 gap-8 text-center">
+      <!-- Skill Cards -->
+      <!-- Isi tidak berubah, hanya pastikan semua ikon dan gambar tetap -->
       <div class="flex flex-col items-center space-y-2" data-aos="fade-up" data-aos-delay="0">
         <i class="fab fa-html5 text-orange-500 text-5xl"></i><p>HTML</p>
       </div>
@@ -49,7 +69,7 @@
       <div class="flex flex-col items-center space-y-2" data-aos="fade-up" data-aos-delay="200">
         <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="Tailwind CSS" class="w-12 h-12">
         <p class="text-lg font-medium">Tailwind CSS</p>
-      </div>      
+      </div>
       <div class="flex flex-col items-center space-y-2" data-aos="fade-up" data-aos-delay="300">
         <i class="fab fa-js-square text-yellow-400 text-5xl"></i><p>JavaScript</p>
       </div>
@@ -59,87 +79,108 @@
       <div class="flex flex-col items-center space-y-2" data-aos="fade-up" data-aos-delay="500">
         <i class="fab fa-python text-blue-400 text-5xl"></i><p>Python</p>
       </div>
-      <div class="flex flex-col items-center space-y-2" data-aos="fade-up" data-aos-delay="600">
-        <i class="fas fa-database text-gray-600 text-5xl"></i><p>SQL</p>
-      </div>
       <div class="flex flex-col items-center space-y-2" data-aos="fade-up" data-aos-delay="700">
         <i class="fas fa-cube text-purple-500 text-5xl"></i><p>Unity</p>
       </div>
+      <div class="flex flex-col items-center space-y-2" data-aos="fade-up" data-aos-delay="600">
+        <i class="fas fa-database text-gray-600 text-5xl"></i><p>SQL</p>
+      </div>
+      <div class="flex flex-col items-center space-y-2" data-aos="fade-up" data-aos-delay="800">
+        <img src="https://www.vectorlogo.zone/logos/postgresql/postgresql-icon.svg" alt="PostgreSQL" class="w-12 h-12">
+        <p>PostgreSQL</p>
+      </div>
+      <div class="flex flex-col items-center space-y-2" data-aos="fade-up" data-aos-delay="900">
+        <img src="https://www.vectorlogo.zone/logos/mysql/mysql-icon.svg" alt="MySQL" class="w-12 h-12">
+        <p>MySQL</p>
+      </div>
     </div>
-  
+
     <!-- Desain Grafis -->
     <section class="mt-16">
-      <h2 class="text-2xl font-semibold mb-6 border-l-4 border-pink-500 pl-4" data-aos="fade-right">🎨 Desain Grafis</h2>
+      <h2 class="text-2xl font-semibold mb-6 border-l-4 border-pink-500 dark:border-pink-600 pl-4" data-aos="fade-right">🎨 Desain Grafis</h2>
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="0">
+        <div class="flex flex-col items-center bg-gray-800 dark:bg-gray-100 dark:text-black p-4 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" alt="Photoshop" class="w-12 h-12 mb-2">
           <span>Photoshop</span>
         </div>
-        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
+        <div class="flex flex-col items-center bg-gray-800 dark:bg-gray-100 dark:text-black p-4 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
           <img src="images/image.png" alt="Canva" class="w-12 h-12 mb-2">
           <span>Canva</span>
         </div>
-        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
+        <div class="flex flex-col items-center bg-gray-800 dark:bg-gray-100 dark:text-black p-4 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" class="w-12 h-12 mb-2">
           <span>Figma</span>
         </div>
       </div>
     </section>
-  
-    <!-- Kecerdasan Buatan -->
+
+    <!-- AI -->
     <section class="mt-16">
-      <h2 class="text-2xl font-semibold mb-6 border-l-4 border-green-500 pl-4" data-aos="fade-right">🤖 Kecerdasan Buatan (AI)</h2>
+      <h2 class="text-2xl font-semibold mb-6 border-l-4 border-green-500 dark:border-green-600 pl-4" data-aos="fade-right">🤖 Kecerdasan Buatan (AI)</h2>
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="0">
+        <div class="flex flex-col items-center bg-gray-800 dark:bg-gray-100 dark:text-black p-4 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up">
           <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT" class="w-12 h-12 mb-2">
           <span>ChatGPT</span>
         </div>
-        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
+        <div class="flex flex-col items-center bg-gray-800 dark:bg-gray-100 dark:text-black p-4 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
           <img src="images/claude_ai.jpg" alt="Claude.ai" class="w-12 h-12 mb-2">
           <span>Claude.ai</span>
         </div>
-        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
+        <div class="flex flex-col items-center bg-gray-800 dark:bg-gray-100 dark:text-black p-4 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
           <img src="images/Meta.png" alt="Meta AI" class="w-12 h-12 mb-2">
           <span>Meta AI</span>
         </div>
       </div>
     </section>
-  
+
     <!-- Microsoft Office -->
     <section class="mt-16">
-      <h2 class="text-2xl font-semibold mb-6 border-l-4 border-blue-400 pl-4" data-aos="fade-right">💼 Microsoft Office</h2>
+      <h2 class="text-2xl font-semibold mb-6 border-l-4 border-blue-400 dark:border-blue-600 pl-4" data-aos="fade-right">💼 Microsoft Office</h2>
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="0">
+        <div class="flex flex-col items-center bg-gray-800 dark:bg-gray-100 dark:text-black p-4 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up">
           <img src="images/Microsoft-Word-Logo-8.svg" alt="Word" class="w-12 h-12 mb-2">
           <span>Microsoft Word</span>
         </div>
-        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
+        <div class="flex flex-col items-center bg-gray-800 dark:bg-gray-100 dark:text-black p-4 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
           <img src="images/Excel-logo-2.svg" alt="Excel" class="w-12 h-12 mb-2">
           <span>Microsoft Excel</span>
         </div>
-        <div class="flex flex-col items-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
+        <div class="flex flex-col items-center bg-gray-800 dark:bg-gray-100 dark:text-black p-4 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
           <img src="images/Microsoft-PowerPoint-Logo-SVG_010.svg" alt="PowerPoint" class="w-12 h-12 mb-2">
           <span>PowerPoint</span>
         </div>
       </div>
     </section>
-  
+
   </main>
-  
-
-  <!-- AOS JS -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 800,
-    once: true, // animasi hanya terjadi sekali saat scroll
-  });
-</script>
-
 
   <!-- Footer -->
-  <footer class="text-center text-sm text-gray-500 dark:text-gray-400 py-4 mt-10">
-    &copy; 2025 Raihan Anmar Widyasmoro
+  <footer class="text-center text-gray-600 dark:text-gray-400 py-6 border-t border-gray-300 dark:border-white/10 mt-10 transition-colors">
+    <p>&copy; 2025 Raihan Anmar Widyasmoro.</p>
   </footer>
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init();</script>
+
+  <!-- Dark Mode Script -->
+  <script>
+    const toggleBtn = document.getElementById('toggle-dark');
+    const html = document.documentElement;
+    const icon = document.getElementById('theme-icon');
+  
+    // Atur ikon sesuai kondisi saat ini
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'dark' || (!currentTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      icon.classList.replace('fa-moon', 'fa-sun');
+    }
+  
+    toggleBtn.addEventListener('click', () => {
+      const isDark = html.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      icon.classList.replace(isDark ? 'fa-moon' : 'fa-sun', isDark ? 'fa-sun' : 'fa-moon');
+    });
+  </script>
+
 </body>
 </html>
