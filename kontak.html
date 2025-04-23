@@ -1,90 +1,129 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+  <script>
+    const userTheme = localStorage.getItem('theme');
+    if (userTheme === 'dark' || userTheme === null) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kontak</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kontak | Portofolio</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = { darkMode: 'class' }
+    tailwind.config = {
+      darkMode: 'class'
+    }
   </script>
-  <script src="js/darkmode.js" defer></script>
 </head>
-<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-white font-sans transition-colors duration-500">
+
+<body class="font-sans flex flex-col min-h-screen bg-white text-black dark:bg-[#0d1117] dark:text-white transition-colors duration-300">
 
   <!-- Navbar -->
-  <nav class="p-4 bg-blue-600 dark:bg-gray-800 text-white flex justify-between">
-    <div class="flex space-x-4">
-      <a href="index.html">🏠 Beranda</a>
-      <a href="tentang.html">Tentang</a>
-      <a href="skill.html">Skill</a>
-      <a href="proyek.html">Proyek</a>
-      <a href="sertifikat.html">Sertifikat</a>
-      <a href="kontak.html">Kontak</a>
+  <header class="fixed w-full z-50 bg-white dark:bg-[#0f172a] shadow-md transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-black dark:text-white">Raport.</h1>
+      <div class="flex items-center space-x-6 text-sm">
+        <nav class="space-x-6">
+          <a href="index.html" class="hover:text-blue-600 dark:hover:text-blue-400">Beranda</a>
+          <a href="tentang.html" class="hover:text-blue-600 dark:hover:text-blue-400">Tentang</a>
+          <a href="proyek.html" class="hover:text-blue-600 dark:hover:text-blue-400">Proyek</a>
+          <a href="skill.html" class="hover:text-blue-600 dark:hover:text-blue-400">Skill</a>
+          <a href="sertifikat.html" class="hover:text-blue-600 dark:hover:text-blue-400">Sertifikat</a>
+          <a href="kontak.html" class="hover:text-blue-600 dark:hover:text-blue-400 font-bold text-blue-700 dark:text-blue-400">Kontak</a>
+        </nav>
+        <!-- Dark Mode Toggle -->
+        <button id="toggle-dark" class="text-black dark:text-white hover:text-yellow-500 dark:hover:text-yellow-400 text-xl transition">
+          <i class="fas fa-moon" id="theme-icon"></i>
+        </button>
+      </div>
     </div>
-    <button id="toggleDark" class="bg-white text-black dark:bg-gray-700 dark:text-white px-3 py-1 rounded">🌙 Mode</button>
-  </nav>
-
-  <!-- Header -->
-  <header class="bg-gradient-to-r from-blue-600 to-teal-400 text-white py-6 text-center shadow-md">
-    <h1 class="text-3xl font-bold">Kontak Saya</h1>
   </header>
 
-  <!-- Konten Kontak -->
-  <main class="max-w-3xl mx-auto px-4 py-10 space-y-8">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- Nomor HP -->
-      <div class="flex items-center space-x-4">
-        <i class="fas fa-phone text-blue-600 text-3xl"></i>
-        <div>
-          <p class="font-semibold">No. Handphone</p>
-          <p>+62 853-5245-4149</p>
+  <!-- Konten -->
+  <main class="pt-32 pb-16 px-6 max-w-4xl mx-auto space-y-12 transition-colors">
+
+    <section data-aos="fade-up" class="text-center">
+      <h2 class="text-3xl font-bold text-blue-500 dark:text-blue-400 mb-4">Hubungi Saya</h2>
+      <p class="text-gray-700 dark:text-gray-300">Silakan hubungi saya melalui kontak berikut atau kunjungi lokasi saya.</p>
+    </section>
+
+    <section data-aos="fade-up" data-aos-delay="100" class="grid md:grid-cols-2 gap-8">
+
+      <!-- Info Kontak -->
+      <div class="space-y-6">
+        <div class="bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl p-4 transition-colors">
+          <h3 class="text-blue-500 dark:text-blue-300 text-sm">📱 Nomor HP</h3>
+          <p class="text-lg font-semibold text-gray-800 dark:text-white">+62 853-5245-4149</p>
+        </div>
+        <div class="bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl p-4 transition-colors">
+          <h3 class="text-blue-500 dark:text-blue-300 text-sm">📧 Gmail</h3>
+          <p class="text-lg font-semibold text-gray-800 dark:text-white">raihananmarw@gmail.com</p>
+        </div>
+        <div class="bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl p-4 transition-colors">
+          <h3 class="text-blue-500 dark:text-blue-300 text-sm">🔗 LinkedIn</h3>
+          <a href="https://www.linkedin.com/in/raihananmarw" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">
+            Raihan Anmar Widyasmoro
+          </a>
         </div>
       </div>
 
-      <!-- Email -->
-      <div class="flex items-center space-x-4">
-        <i class="fas fa-envelope text-red-500 text-3xl"></i>
-        <div>
-          <p class="font-semibold">Gmail</p>
-          <p>raihananmarw@gmail.com</p>
-        </div>
+      <!-- Peta Lokasi -->
+      <div class="rounded-xl overflow-hidden border border-gray-200 dark:border-white/10 bg-gray-100 dark:bg-transparent shadow transition-colors">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126920.28228579364!2d106.74711702124453!3d-6.229569453115677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1745325749997!5m2!1sid!2sid" 
+          width="100%" 
+          height="100%" 
+          style="border:0; min-height:300px;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
 
-      <!-- LinkedIn -->
-      <div class="flex items-center space-x-4">
-        <i class="fab fa-linkedin text-blue-700 text-3xl"></i>
-        <div>
-          <p class="font-semibold">LinkedIn</p>
-          <a href="https://www.linkedin.com/in/raihananmarw" target="_blank" class="text-blue-500 hover:underline">linkedin.com/in/raihananmarw</a>
-        </div>
-      </div>
-
-      <!-- Lokasi -->
-      <div class="flex items-center space-x-4">
-        <i class="fas fa-map-marker-alt text-green-500 text-3xl"></i>
-        <div>
-          <p class="font-semibold">Lokasi</p>
-          <p>Jakarta, Indonesia</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Peta Interaktif -->
-    <div class="mt-10">
-      <h2 class="text-xl font-semibold mb-4">📍 Peta Lokasi</h2>
-      <iframe class="w-full h-80 border-0" 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126920.28228579364!2d106.74711702124452!3d-6.2295694531156816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1744186348388!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
+    </section>
   </main>
 
   <!-- Footer -->
-  <footer class="text-center text-sm text-gray-500 dark:text-gray-400 py-4 mt-10">
-    &copy; 2025 Raihan Anmar Widyasmoro
+  <footer class="text-center text-gray-600 dark:text-gray-400 py-6 border-t border-gray-300 dark:border-white/10 mt-10 transition-colors">
+    <p>&copy; 2025 Raihan Anmar Widyasmoro.</p>
   </footer>
 
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <!-- Dark Mode Script -->
+  <script>
+    const toggleBtn = document.getElementById('toggle-dark');
+    const html = document.documentElement;
+    const icon = document.getElementById('theme-icon');
+
+    if (localStorage.getItem('theme') === 'dark') {
+      html.classList.add('dark');
+      icon.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      if (html.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+        icon.classList.replace('fa-moon', 'fa-sun');
+      } else {
+        localStorage.setItem('theme', 'light');
+        icon.classList.replace('fa-sun', 'fa-moon');
+      }
+    });
+  </script>
 </body>
 </html>
